@@ -1,14 +1,52 @@
+$label-width: 150px;
+$input-width: 500px;
+$button-height: 25px;
+
 .registration {
   &-item {
     padding-bottom: 10px;
 
     &__label {
       display: inline-block;
-      width: 150px;
+      width: $label-width;
     }
 
-    &__input--invalid {
-      border: red 1px solid;
+    &__input {
+      width: $input-width;
+      height: 25px;
+      padding: 5px 10px;
+
+      &-eye {
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 5px;
+        border: black 1px solid;
+        height: $button-height;
+        width: $button-height;
+        margin-left: 10px;
+        vertical-align: middle;
+
+        & > span {
+          display: flex;
+          height: $button-height;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      &--invalid {
+        border: red 1px solid;
+      }
     }
+  }
+
+  &__message {
+    border: red 1px solid;
+    border-radius: 5px;
+    margin-left: $label-width;
+    margin-top: 5px;
+    padding: 5px 10px;
+    width: $input-width;
+    color: red;
   }
 }

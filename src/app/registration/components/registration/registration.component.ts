@@ -13,9 +13,12 @@ import { RegistrationService } from '../../services/registretion.service';
   styleUrls: ['./registration.component.scss'],
 })
 export class RegistrationComponent implements OnInit {
+  readonly passwordtype = 'password';
+
   registrationFields$: Observable<RegistrationField[]> = this.registrationService.getRegistrationFields();
   registrationFields: RegistrationField[] | undefined;
   registrationForm: FormGroup = this.fb.group({});
+  isPasswordVisible = false;
 
   constructor(
     private registrationService: RegistrationService,
@@ -44,6 +47,14 @@ export class RegistrationComponent implements OnInit {
     const control = this.registrationForm.get(name);
   
     return !control?.valid && !!(control?.touched || control?.dirty);
+  }
+
+  isPassword(name: string): boolean {
+    return name === this.passwordtype;
+  }
+
+  togglePassword(): void {
+    this.isPasswordVisible = !this.isPasswordVisible;
   }
 
   onSubmit(): void {
