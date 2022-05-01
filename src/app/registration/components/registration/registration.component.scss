@@ -1,0 +1,14 @@
+.registration {
+  &-item {
+    padding-bottom: 10px;
+
+    &__label {
+      display: inline-block;
+      width: 150px;
+    }
+
+    &__input--invalid {
+      border: red 1px solid;
+    }
+  }
+}

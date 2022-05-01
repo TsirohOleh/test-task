@@ -1,0 +1,19 @@
+<div class="registration">
+  <h1>Registration</h1>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" *ngIf="registrationFields">
+    <div *ngFor="let field of registrationFields" class="registration-item">
+      <div>
+        <label class="registration-item__label" [for]="field.name">{{ field.label }}</label>
+        <input [formControlName]="field.name"
+               [type]="field.type"
+               [name]="field.name"
+               [id]="field.name"
+               [class.registration-item__input--invalid]="isInvalid(field.name)" />
+      </div>
+      <div class="registration__message" *ngIf="isInvalid(field.name)">
+        {{ registrationForm.get(field.name)?.errors?.['error']?.value }}
+      </div>
+    </div>
+    <button type="submit" [disabled]="!registrationForm.valid">Register</button>
+  </form>
+</div>

@@ -61,13 +61,13 @@
     "validations": [
       {
         "name": "regex",
-        "message": "Only English characters are allowed.",
+        "message": "Enter a valid email address.",
         "value": "^[a-z0-9]+@[a-z0-9]+\\.[a-z]{2,}$"
       },
       {
         "name": "maxlength",
-        "message": "Must be less than 47 characters.",
-        "value": 46
+        "message": "Must be less than 46 characters.",
+        "value": 45
       }
     ]
   },
@@ -84,7 +84,7 @@
       },
       {
         "name": "maxlength",
-        "message": "Must be less than 47 characters.",
+        "message": "Must be less than 11 characters.",
         "value": 10
       },
       {
@@ -102,7 +102,7 @@
     "validations": [
       {
         "name": "maxlength",
-        "message": "Must be less than 15 characters.",
+        "message": "Must be less than 16 characters.",
         "value": 15
       },
       {
